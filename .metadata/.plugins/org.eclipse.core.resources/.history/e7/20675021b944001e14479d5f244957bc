@@ -1,0 +1,17 @@
+package lecture_15;
+
+public class String_Add {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s1="hello";//pool me banega           //these two are only cases where pool me banega(line 6 ,7 and 13)
+		String s2="bye";//pool me banega
+//		String s3=s1.concat(s2);
+		String s3=s1+s2;                    // baaki sab heap me hi banega
+		System.out.println(s3);
+		s1=s1+"hello";
+		String s4="hello"+"bye"; //pool me bnega
+
+	}
+
+}

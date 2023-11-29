@@ -1,0 +1,79 @@
+package lecture_36;
+
+import java.util.Scanner;
+
+public class Binary_Tree {
+	
+	class Node{
+		int val;
+		Node left;
+		Node right;
+	}
+	private Node root;
+	
+	Scanner sc = new Scanner(System.in);
+	
+	
+	public Binary_Tree() {
+		root = CreateTree();
+	}
+
+
+	private Node CreateTree() {
+		// TODO Auto-generated method stub
+		int item = sc.nextInt();
+		Node node = new Node();
+		
+		node.val=item;
+		boolean hlc = sc.nextBoolean();                 // hlc means has left child;
+		if(hlc) {
+			node.left=CreateTree();
+		}
+		  
+		boolean hrc = sc.nextBoolean();               // hrc means has right child;
+		if(hrc) {
+			node.right=CreateTree();
+		}
+		return node;
+	}
+	
+	
+	public void Display() {
+		Display(root);
+	}
+	private void Display(Node nn) {
+		
+		if(nn==null) {
+			return;
+		}
+		String s="";
+		s="<---" + s + nn.val + "--->";
+		if(nn.left!=null) {
+			s = nn.left.val + s;
+		}
+		else {
+			s ="." + s;
+		}
+		if(nn.right!=null) {
+			s = s+ nn.right.val;
+		}
+		else {
+			s =s+".";
+		}
+		
+		System.out.println(s);
+		Display(nn.left);
+		Display(nn.right);
+	}
+	
+	public int max() {
+		return max(root);
+	}
+
+
+	private int max(Node root2) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

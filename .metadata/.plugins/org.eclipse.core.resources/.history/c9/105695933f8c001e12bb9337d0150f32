@@ -1,0 +1,150 @@
+package lecture_36;
+
+import java.util.Scanner;
+
+public class Binary_Tree {
+	
+	class Node{
+		int val;
+		Node left;
+		Node right;
+	}
+	private Node root;
+	
+	Scanner sc = new Scanner(System.in);
+	
+	
+	public Binary_Tree() {
+		root = CreateTree();
+	}
+
+
+	private Node CreateTree() {
+		// TODO Auto-generated method stub
+		int item = sc.nextInt();
+		Node node = new Node();
+		
+		node.val=item;
+		boolean hlc = sc.nextBoolean();                 // hlc means has left child;
+		if(hlc) {
+			node.left=CreateTree();
+		}
+		  
+		boolean hrc = sc.nextBoolean();               // hrc means has right child;
+		if(hrc) {
+			node.right=CreateTree();
+		}
+		return node;
+	}
+	
+	
+	public void Display() {
+		Display(root);
+	}
+	private void Display(Node nn) {
+		
+		if(nn==null) {
+			return;
+		}
+		String s="";
+		s="<---" + s + nn.val + "--->";
+		if(nn.left!=null) {
+			s = nn.left.val + s;
+		}
+		else {
+			s ="." + s;
+		}
+		if(nn.right!=null) {
+			s = s+ nn.right.val;
+		}
+		else {
+			s =s+".";
+		}
+		
+		System.out.println(s);
+		Display(nn.left);
+		Display(nn.right);
+	}
+	
+	public int max() {
+		return max(root);
+	}
+
+
+	private int max(Node nn) {
+		// TODO Auto-generated method stub
+		if(nn == null) {
+			return Integer.MIN_VALUE;
+		}
+		int l = max(nn.left);
+		int r = max(nn.right);
+		
+		return Math.max(l, Math.max(r, nn.val));
+	}
+	
+	public boolean find(int item) {
+		return find(root, item);
+	}
+
+
+	private boolean find(Node nn, int item) {
+		// TODO Auto-generated method stub
+		if(nn==null) {
+			return false;
+		}
+		if(nn.val==item) {
+			return true;
+		}
+		boolean l =find(nn.left,item);
+		boolean r =find(nn.right,item);
+		return l||r;
+	}
+	
+	public int height() {
+		return height(root);
+	}
+
+
+	private int height(Node nn) {
+		// TODO Auto-generated method stub                               // here we have taken height of single node as zero!
+		if(nn==null) {
+			return -1;
+		}
+		
+		int lh = height(nn.left);
+		int rh = height(nn.right);
+		 return Math.max(lh, rh)+ 1;
+	}
+	
+	public void preOrder() {
+		preOrder(this.root);
+		System.out.println();
+	}
+
+
+	private void preOrder(Node node) {
+		// TODO Auto-generated method stub
+		if(node==null) {
+			return ;
+		}
+		System.out.print(node.val+" ");
+		preOrder(node.left);
+		preOrder(node.right);
+		
+	}
+	
+	public void InOrder() {
+		InOrder(this.root);
+		System.out.println();
+	}
+
+
+	private void InOrder(Node node) {
+		// TODO Auto-generated method stub
+		InOrder(node.left);
+		System.out.print(node.val+" ");
+		InOrder(node.right);
+		
+	}
+
+}
