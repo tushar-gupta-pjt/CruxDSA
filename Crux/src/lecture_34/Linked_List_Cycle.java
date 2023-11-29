@@ -89,6 +89,7 @@ public class Linked_List_Cycle {
 		cl.Display();
 		cl.createCycle();
 		System.out.println(cl.hasCycle());
+		cl.AddFirst(2222);
 		
 
 	}
