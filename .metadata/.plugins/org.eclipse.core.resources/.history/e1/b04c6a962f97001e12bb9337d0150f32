@@ -1,0 +1,24 @@
+package lecture_40;
+
+public class Cars {
+	
+	int price;
+	int speed;
+	String color;
+	
+	public Cars() {
+		
+	}
+	
+	public Cars(int price, int speed, String color) {
+		this.price = price;
+		this.price = speed;
+		this.color = color;
+	
+	}
+	
+	@Override
+	public String toString() {
+		return "P : " + this.price + " S: " + this.speed + " C: " + this.color;
+	}
+}

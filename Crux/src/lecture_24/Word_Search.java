@@ -40,7 +40,7 @@ public class Word_Search {
 			}
 		}
 //		boolean a1=WordSearch(board,word,i-1,j,idx+1);
-//		boolean a2=WordSearch(board,word,i+1,j,idx+1);          //these are also right! but commented because we anted to use loop
+//		boolean a2=WordSearch(board,word,i+1,j,idx+1);          //these are also right! but commented because we wanted to use loop
 //		boolean a3=WordSearch(board,word,i,j-1,idx+1);
 //		boolean a4=WordSearch(board,word,i,j+1,idx+1);
 		board[i][j]=word.charAt(idx);

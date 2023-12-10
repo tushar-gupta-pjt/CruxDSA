@@ -1,0 +1,13 @@
+package lecture_39;
+
+public abstract class Abstract_Demo {
+	
+	public abstract void payment();
+	
+	public void ViewItem() {
+		
+	}
+	
+	public abstract int No_Item();
+
+}
